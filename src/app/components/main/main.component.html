@@ -1,0 +1,28 @@
+<div class="main-header">
+
+  <div class="header-content">
+    <div class="container">
+      <h1>TODO App</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="form-area">
+      <form action="" [class.was-validated]="formError">
+        <div class="form-group mx-sm-3 mb-2">
+          <h4>Task Name</h4>
+          <input #taskTitle type="text" class="form-control" id="taskTitle" placeholder="Enter todo item..." required>
+          <div class="invalid-feedback">
+            Please enter a task.
+          </div>
+          <textarea #taskDesc class="form-control" name="" id="taskDesc" placeholder="Write a description...." cols="30"
+                    rows="4"></textarea>
+          <button (click)="handleSubmit(taskTitle, taskDesc)" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div *ngFor="let taskItem of tasksList">
+      <app-task (deleteID)="deleteTask($event)"  [taskData]="taskItem"></app-task>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.task-area {
+  width: 60% !important;
+  margin: 30px auto;
+}
+
+
+@media (max-width: 468px) {
+  .task-area {
+    width: 100% !important;
+  }
+
+}
